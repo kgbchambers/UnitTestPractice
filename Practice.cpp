@@ -1,6 +1,5 @@
 #include "Practice.h"
 #include <string>
-
 using std::string;
 
 // Receive three integers and rearrange their values so that they are in
@@ -26,7 +25,7 @@ bool Practice::sortDescending(int & first, int & second, int & third)
     third = temp;
   }
 
-  if((first > second) && (second > third))
+  if((first >= second) && (second >= third))
   {
     return true;
   }
@@ -42,6 +41,8 @@ bool Practice::sortDescending(int & first, int & second, int & third)
 // character in the string, but disregarding case ('x' is the same as 'X')
 bool Practice::isPalindrome(string input)
 {
+  if(input.size() == 1)
+    return false;
   for(unsigned int i=0; i < input.size(); i++)
   {
     if( input[i] < 'A' || input[i] > 'Z' )
